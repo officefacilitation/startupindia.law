@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "startup-india-law",
+  "name": "startupindialaw",
   "compatibility_date": "2024-09-23",
   "main": "worker.js",
   "assets": {
