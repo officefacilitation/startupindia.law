@@ -249,9 +249,12 @@ export async function onRequestPost(context) {
   `;
 
   try {
-    if (!env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY environment variable");
-      throw new Error("Missing RESEND_API_KEY configuration");
+    if (!env || !env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY environment variable in Cloudflare Worker settings");
+      return new Response(
+        JSON.stringify({ error: "Server configuration: RESEND_API_KEY is missing in Cloudflare Worker environment variables." }),
+        { status: 500, headers: corsHeaders }
+      );
     }
 
     // Email 1: notify the firm, reply-to the submitter
@@ -290,7 +293,10 @@ export async function onRequestPost(context) {
       const notifyErr = !notifyRes.ok ? await notifyRes.text() : "";
       const confirmErr = !confirmRes.ok ? await confirmRes.text() : "";
       console.error("Resend API error:", { notifyErr, confirmErr });
-      throw new Error("Resend API error");
+      return new Response(
+        JSON.stringify({ error: `Resend API error: ${notifyErr || confirmErr}` }),
+        { status: 500, headers: corsHeaders }
+      );
     }
 
     return new Response(JSON.stringify({ success: true }), {
