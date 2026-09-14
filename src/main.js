@@ -108,34 +108,66 @@ function initHeader() {
 
   // Mobile menu toggle
   if (hamburger && drawer) {
+    // Look for or dynamically create backdrop if not present
+    let backdrop = document.getElementById('mobileNavBackdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'mobile-nav-backdrop';
+      backdrop.id = 'mobileNavBackdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(backdrop);
+    }
+
+    const openDrawer = () => {
+      drawer.classList.add('drawer-open');
+      backdrop.classList.add('backdrop-open');
+      document.body.classList.add('mobile-drawer-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
     const closeDrawer = () => {
       drawer.classList.remove('drawer-open');
+      backdrop.classList.remove('backdrop-open');
+      document.body.classList.remove('mobile-drawer-open');
       hamburger.setAttribute('aria-expanded', 'false');
       drawer.setAttribute('aria-hidden', 'true');
+      backdrop.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     };
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = drawer.classList.contains('drawer-open');
       if (isOpen) {
         closeDrawer();
       } else {
-        drawer.classList.add('drawer-open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        drawer.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        openDrawer();
       }
     });
 
     // Close button inside the drawer
     const internalCloseBtn = document.getElementById('mobileNavCloseBtn');
     if (internalCloseBtn) {
-      internalCloseBtn.addEventListener('click', closeDrawer);
+      internalCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeDrawer();
+      });
     }
+
+    // Close when clicking the backdrop
+    backdrop.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeDrawer();
+    });
 
     // Close on nav link click
     mobileLinks.forEach(link => {
-      link.addEventListener('click', closeDrawer);
+      link.addEventListener('click', () => {
+        closeDrawer();
+      });
     });
 
     // Close on Escape key
@@ -145,15 +177,22 @@ function initHeader() {
       }
     });
 
-    // Close when clicking outside the drawer (on the dimmed area)
-    document.addEventListener('click', (e) => {
-      if (
-        drawer.classList.contains('drawer-open') &&
-        !drawer.contains(e.target) &&
-        !hamburger.contains(e.target)
-      ) {
+    // Mobile consult button in drawer: closes drawer and opens Calendly modal
+    const btnMobileConsult = document.getElementById('btnMobileConsult');
+    if (btnMobileConsult) {
+      btnMobileConsult.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         closeDrawer();
-      }
+        if (typeof window.openCalendlyModal === 'function') {
+          window.openCalendlyModal();
+        }
+      });
+    }
+
+    // Prevent clicks inside drawer content from bubbling to outside listeners
+    drawer.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
   }
 

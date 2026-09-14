@@ -2368,6 +2368,7 @@ textarea,
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  pointer-events: auto;
 }
 
 .header-brand {
@@ -2530,9 +2531,11 @@ textarea,
   cursor: pointer;
   padding: 8px;
   gap: 5px;
-  /* Must be above the drawer */
+  /* Must be above the drawer and backdrop */
   position: relative;
   z-index: 10002;
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
 .hamburger-line {
@@ -2540,6 +2543,7 @@ textarea,
   height: 1.5px;
   background-color: var(--color-ink);
   transition: all 250ms ease;
+  pointer-events: none;
 }
 
 .header-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
@@ -2554,22 +2558,46 @@ textarea,
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Mobile Nav Drawer — drops down from below the header, not full-screen takeover */
+/* Mobile Nav Dimmer Backdrop — covers entire screen to prevent click-through */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(10, 15, 29, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 280ms ease;
+  z-index: 10000;
+}
+
+.mobile-nav-backdrop.backdrop-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto !important;
+}
+
+/* Mobile Nav Drawer — drops down from below the header, clean elevation */
 .mobile-nav-drawer {
   position: fixed;
   /* sits just below the floating header */
   top: calc(var(--nav-height) + 14px);
   left: 12px;
   right: 12px;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(17, 24, 39, 0.1);
   border-radius: 16px;
-  box-shadow: 0 20px 60px -8px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 24px 64px -10px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(-16px) scale(0.97);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease, visibility 280ms ease;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -2582,6 +2610,11 @@ textarea,
   transform: translateY(0) scale(1);
   opacity: 1;
   visibility: visible;
+  pointer-events: auto !important;
+}
+
+.mobile-nav-drawer.drawer-open * {
+  pointer-events: auto !important;
 }
 
 /* Close button inside the drawer */
@@ -2592,22 +2625,27 @@ textarea,
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--color-line);
+  pointer-events: auto;
 }
 
 .mobile-nav-close-btn {
   background: transparent;
   border: 1px solid var(--color-line);
   border-radius: 8px;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
   color: var(--color-grey);
   line-height: 1;
   transition: all 150ms ease;
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
 .mobile-nav-close-btn:hover {
@@ -2628,12 +2666,14 @@ textarea,
   display: flex;
   flex-direction: column;
   gap: 16px;
+  pointer-events: auto;
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  pointer-events: auto;
 }
 
 .mobile-nav-link {
@@ -2642,10 +2682,15 @@ textarea,
   font-weight: 500;
   color: var(--color-charcoal);
   text-decoration: none;
-  padding: 10px 12px;
+  padding: 12px 14px;
+  min-height: 44px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
   transition: color 150ms ease, background 150ms ease;
-  display: block;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+  cursor: pointer;
 }
 
 .mobile-nav-link:hover,
@@ -2661,39 +2706,44 @@ textarea,
   gap: 8px;
   padding-top: 8px;
   border-top: 1px solid var(--color-line);
+  pointer-events: auto;
 }
 
 .btn-mobile-consult {
   width: 100%;
-  min-height: 44px;
+  min-height: 46px;
   background-color: var(--color-ink);
   color: #FFFFFF;
   border: 1px solid var(--color-ink);
   border-radius: 10px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
 .btn-mobile-whatsapp {
   width: 100%;
-  min-height: 44px;
+  min-height: 46px;
   background-color: transparent;
   color: var(--color-charcoal);
   border: 1px solid var(--color-line);
   border-radius: 10px;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 150ms ease, border-color 150ms ease;
+  pointer-events: auto !important;
+  touch-action: manipulation;
 }
 
 .btn-mobile-whatsapp:hover {
@@ -3335,6 +3385,14 @@ body {
   bottom: 28px;
   right: 28px;
   z-index: 9999;
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+
+body.mobile-drawer-open .legal-bot-container {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: scale(0.85);
 }
 
 .legal-bot-trigger {
@@ -5978,6 +6036,20 @@ body {
     height: 38px !important;
     cursor: pointer !important;
     flex-shrink: 0 !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    z-index: 10002 !important;
+  }
+
+  .mobile-nav-drawer {
+    top: 60px !important;
+    left: 10px !important;
+    right: 10px !important;
+    max-height: calc(100dvh - 76px) !important;
+  }
+
+  .mobile-nav-drawer.drawer-open {
+    pointer-events: auto !important;
   }
 
   /* Hide consult button and social icon on phones so center logo stays clean & uncluttered */
