@@ -218,7 +218,7 @@
           <button type="button" class="btn-mobile-consult" id="btnMobileConsult">
             <span>Book Consultation (Calendly)</span>
           </button>
-          <a href="https://wa.me/917827963285?text=Hello%20Aashish%20Gupta,%20I%20would%20like%20to%20inquire%20about%20legal%20counsel%20for%20my%20startup."
+          <a href="https://wa.me/917827963285?text=Hello%20StartupIndia.Law%20team,%20I%20would%20like%20to%20inquire%20about%20legal%20counsel%20for%20my%20startup."
             target="_blank" rel="noopener noreferrer" class="btn-mobile-whatsapp">
             <span>Chat on WhatsApp</span>
           </a>
@@ -259,7 +259,7 @@
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
-            <a href="https://wa.me/917827963285?text=Hello%20Aashish%20Gupta,%20I%20would%20like%20to%20inquire%20about%20StartupIndia.Law."
+            <a href="https://wa.me/917827963285?text=Hello%20StartupIndia.Law%20team,%20I%20would%20like%20to%20inquire%20about%20StartupIndia.Law."
               target="_blank" rel="noopener noreferrer" class="btn-pill-secondary btn-magnetic">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -719,7 +719,7 @@
               <button type="button" class="btn-change-question" id="btnChangeQuestion">&larr; Edit question</button>
             </div>
 
-            <p class="vessel-prompt">Leave your email. Aashish (Aash) Gupta responds within a sunrise.</p>
+            <p class="vessel-prompt">Leave your name and email. Our team will reply within a sunrise.</p>
             <form class="vessel-email-form" id="vesselEmailForm" action="/api/submit"
               method="POST">
               <!-- Honeypot spam check: hidden from humans, targeted by bots -->
@@ -727,18 +727,30 @@
               <input type="hidden" name="question" id="vesselQuestionInput" value="">
 
               <div class="form-error-alert" id="vesselErrorAlert" style="display:none; padding:10px 14px; margin-bottom:12px; border-radius:8px; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); color:#dc2626; font-size:13px; line-height:1.4;">
-                <span id="vesselErrorMsg">Failed to send. Please try again or message Aash on </span>
-                <a href="https://wa.me/917827963285?text=Hi%20Aash,%20messaging%20you%20from%20startupindia.law%20inquiry%20basin" target="_blank" rel="noopener noreferrer" style="color:#b91c1c; font-weight:600; text-decoration:underline;">WhatsApp &rarr;</a>
+                <span id="vesselErrorMsg">Failed to send. Please try again or message our team on </span>
+                <a href="https://wa.me/917827963285?text=Hi%20StartupIndia.Law%20team,%20messaging%20you%20from%20startupindia.law%20inquiry%20basin" target="_blank" rel="noopener noreferrer" style="color:#b91c1c; font-weight:600; text-decoration:underline;">WhatsApp &rarr;</a>
               </div>
 
-              <div class="vessel-input-group">
-                <input type="email" name="email" inputmode="email" autocomplete="email" class="vessel-text-input"
-                  id="vesselEmailInput" placeholder="your.name@domain.com" required
-                  style="font-size: 15px; height: 52px; width: 100%;">
-                <button type="submit" class="vessel-action-btn" id="btnSubmitEmail" aria-label="Submit inquiry">
-                  <span class="arrow-icon">Submit &rarr;</span>
-                </button>
+              <div class="vessel-form-grid">
+                <div class="vessel-field-group">
+                  <label for="vesselNameInput" class="vessel-field-label">Your Name *</label>
+                  <div class="vessel-field-wrap">
+                    <input type="text" name="name" id="vesselNameInput" class="vessel-field-input"
+                      placeholder="e.g. Advait Sharma" required autocomplete="name">
+                  </div>
+                </div>
+                <div class="vessel-field-group">
+                  <label for="vesselEmailInput" class="vessel-field-label">Work Email *</label>
+                  <div class="vessel-field-wrap">
+                    <input type="email" name="email" id="vesselEmailInput" inputmode="email" autocomplete="email" class="vessel-field-input"
+                      placeholder="advait@company.com" required>
+                  </div>
+                </div>
               </div>
+
+              <button type="submit" class="vessel-submit-full" id="btnSubmitEmail" aria-label="Submit inquiry to our team">
+                <span>Submit Inquiry to Our Team &rarr;</span>
+              </button>
               <p class="vessel-subnote">Strict legal confidentiality maintained. No unsolicited emails.</p>
             </form>
           </div>

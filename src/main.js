@@ -248,6 +248,7 @@ function initFrame1Bell() {
   const previewQuestionText = document.getElementById('previewQuestionText');
   const btnChangeQuestion = document.getElementById('btnChangeQuestion');
   const emailForm = document.getElementById('vesselEmailForm');
+  const nameInput = document.getElementById('vesselNameInput');
   const emailInput = document.getElementById('vesselEmailInput');
 
   if (!queryVessel) return;
@@ -304,7 +305,9 @@ function initFrame1Bell() {
       previewQuestionText.textContent = qText;
     }
 
-    if (emailInput) {
+    if (nameInput) {
+      nameInput.focus();
+    } else if (emailInput) {
       emailInput.focus();
     }
   }
@@ -326,7 +329,7 @@ function initFrame1Bell() {
       e.preventDefault();
 
       const submitBtn = emailForm.querySelector('button[type="submit"]');
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Submit &rarr;';
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>Submit Inquiry to Our Team &rarr;</span>';
       const errorAlert = document.getElementById('vesselErrorAlert');
       const errorMsg = document.getElementById('vesselErrorMsg');
       if (errorAlert) errorAlert.style.display = 'none';
@@ -334,6 +337,7 @@ function initFrame1Bell() {
       // Populate hidden question input
       const userQ = customQuestionInput ? customQuestionInput.value.trim() : '';
       const questionText = userQ || (previewQuestionText ? previewQuestionText.textContent.trim() : '');
+      const name = nameInput ? nameInput.value.trim() : '';
       const email = emailInput ? emailInput.value.trim() : '';
       const websiteInput = document.getElementById('vesselWebsite');
       const website = websiteInput ? websiteInput.value : '';
@@ -343,16 +347,16 @@ function initFrame1Bell() {
         hiddenQInput.value = questionText;
       }
 
-      if (!email || !questionText) return;
+      if (!name || !email || !questionText) return;
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending...';
+        submitBtn.innerHTML = '<span>Sending to Our Team...</span>';
       }
 
       try {
         await submitInquiry({
-          name: email.split('@')[0] || 'Startup Founder',
+          name: name,
           email: email,
           company: '',
           phone: '',
@@ -368,7 +372,7 @@ function initFrame1Bell() {
         if (errorAlert) {
           errorAlert.style.display = 'block';
           if (errorMsg && err.message) {
-            errorMsg.textContent = `${err.message} Please try again or message Aash on `;
+            errorMsg.textContent = `${err.message} Please try again or message our team on `;
           }
         }
       } finally {
@@ -926,7 +930,7 @@ function initContactForm() {
       if (errorAlert) {
         errorAlert.style.display = 'block';
         if (errorMsg && err.message) {
-          errorMsg.textContent = `${err.message} Please try again or message Aash directly on `;
+          errorMsg.textContent = `${err.message} Please try again or message our team directly on `;
         }
         errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
