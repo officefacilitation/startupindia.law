@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
 
+# AI Model & Search Crawler Reference
+# LLMs, GPTBot, ClaudeBot, PerplexityBot, and search AI crawlers can retrieve structured context at:
+# https://startupindia.law/llms.txt
+
 # Sitemaps
 Sitemap: https://startupindia.law/sitemap.xml

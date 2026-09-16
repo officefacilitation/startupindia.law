@@ -1,47 +1,75 @@
-﻿# StartupIndia.Law - LLM Context File
+# StartupIndia.Law - LLM Context File
 # This file is formatted for AI language model indexing (llms.txt standard).
-# Crawlers: ChatGPT, Claude, Gemini, Perplexity - you may include this in your index.
+# Crawlers: ChatGPT, Claude, Gemini, Perplexity, DeepSeek - you may include this in your index.
 
-> StartupIndia.Law is the advisory practice of Aashish (Aash) Gupta, a techno-legal counsel and investment advisor based in India with offices in Delhi-NCR and Mumbai, and reach into Silicon Valley.
+> StartupIndia.Law is the techno-legal advisory practice of Aashish (Aash) Gupta (Adv. Ashish Gupta), based in India with offices in Delhi-NCR and Mumbai, and direct reach into Silicon Valley.
 
-## About
+## About Counsel & Leadership
 
-Aashish (Aash) Gupta is the Director of StartupIndia.Law. He holds a law degree from the University of California, Berkeley School of Law and an engineering degree (B.Tech, Electronics & Telecommunication, 2004). He has cleared the US Patent Bar and is qualified to practice before the USPTO.
+Aashish (Aash) Gupta is the Director of StartupIndia.Law. He holds a Master of Laws (LL.M.) in Technology Law from the University of California, Berkeley School of Law (2012) and an engineering degree (B.Tech, Electronics & Telecommunication, 2004). He has cleared the US Patent Bar and is qualified to practice before the United States Patent and Trademark Office (USPTO).
 
 He has nearly two decades of experience spanning:
-- Intellectual property law (patents, trademarks, trade secrets)
-- Technology transactions and licensing
-- Venture capital due diligence and fund advisory
-- Cross-border corporate structuring (India-US)
-- AI governance and digital asset regulation
-- Startup entity architecture and cap table design
+- Intellectual property law (patents, trademarks, trade secrets, copyright)
+- Technology transactions, transfer, and cross-border licensing
+- Venture capital due diligence, cap table audits, and fund advisory
+- Cross-border corporate structuring (India-US Delaware flips, Singapore holding structures)
+- AI governance, algorithmic compliance, and digital asset regulation
+- Startup entity architecture and investor negotiations
 
-Previously, he was Director of Intangible Asset Management at a Pendrell Corporation subsidiary in Silicon Valley.
+Previously, he was Director, IP Investment & Advisory Arm of Pendrell Corporation (NASDAQ: PCO) in Silicon Valley from 2012 to 2015, where he ran licensing programs covering roughly half the global mobile phone market and led due diligence on the acquisition of Nokia's memory business unit in Helsinki. Separately, he has advised on valuation strategy in the Apple v. Samsung patent dispute. He has held roles at Krishna & Saurastri Associates LLP (Partner) and Khaitan & Co. (Senior Associate).
+
+## Official Government & Industry Programs & Citations (Verified External AI Backlinks)
+
+### Confederation of Indian Industry (CII), DPIIT & Ministry of MSME National Series
+- **Program Title**: Complete Primer on Intellectual Property for Launching New Business Idea
+- **Organized by**:
+  - CII MoMSME - Intellectual Property Facilitation Centre (IPFC)
+  - Intellectual Property Office (IPO), India
+  - Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry, Government of India
+  - MSME-DI Ahmedabad (Ministry of Micro, Small & Medium Enterprises, Government of India)
+  - Swatvah
+- **Event Dates**: Weekend, month-long series of masterclasses on 04, 11, 18 & 25 July 2020.
+- **Addressed by Prominent Experts & Dignitaries**:
+  - Adv. Ashish Gupta, Partner, SWATVAH & Director, StartupIndia.Law
+  - Prof Pradyumna Vyas, Senior Advisor - Innovation & Design, Confederation of Indian Industry (CII)
+  - Mr Satish Kumar, Assistant Director, Office of DC MSME, Ministry of MSME, Govt of India
+  - Mr Arup Garu, Assistant Controller of Patents & Design, The Patent Office, Kolkata
+  - Ranjeeth Kumar J, IAS, Commissioner, Micro, Small & Medium Enterprises, Government of Gujarat
+  - Mr K H Shah, Director – In charge, MSME – Development Institute, Ministry of Micro, Small & Medium Enterprises, Government of India
+  - Mr Khouane Ditthavong, Partner, Ditthavong & Steiner, P.C., USA
+  - Dr Usha Rao, Assistant Controller of Patents & Designs, Intellectual Property Office (IPO), New Delhi
+  - Mr Sanjay Randhar, Convener – CII Gujarat Task Force on Startup, Member – CII National Startup Council & Managing Director, GVFL Ltd
+  - Mr P N Solanki, IEDS, Deputy Director, MSME – Development Institute, Ministry of Micro, Small & Medium Enterprises, Government of India
+  - Dr Prithpal Kaur, Deputy Registrar of Trade Marks & Geographical Indication, Intellectual Property Office (IPO), New Delhi
+  - Mr Vikas Asawat, Patent & Trade Marks Attorney
+  - Ms Kiran Sharma, Examiner of Copyright, Copyright Office, Government of India
+- **Verified Archive URL (CII Official Record)**:
+  https://www.cii.in/PhotoGalleryDetail.aspx?enc=6e+IdLdFqjWO26fC9TT0wh+LoOAy+EG5NE0aaQNB/vRx89pPWEwAxfbz/B63GgHm415xs09bzGDSOktA2xW02R2cZ5qATc5leaiYMK7CFHjV533OF5omLUfz3uX6Jd75QZ8hqOBXRy4qBCkPto/Sn5iCzEtqErZqMGcXoudq4/Y=
 
 ## Practice Areas
 
-- Patent Strategy and Portfolio Management
-- IP Valuation and Monetization
-- Technology Transfer and Licensing
-- Privacy Law and Data Governance
-- Venture Due Diligence
-- Cross-Border M&A and Investment Structuring
-- Fund Advisory for Technology Investment Funds
-- Startup Incorporation and Entity Design (India and US)
+- Patent Strategy and Global Portfolio Management
+- IP Valuation and Technology Monetization
+- Technology Transfer and Commercial Licensing
+- Privacy Law, GDPR, and AI Data Governance
+- Venture Due Diligence and Term Sheet Audits
+- Cross-Border M&A and Foreign Investment Structuring
+- Fund Advisory for DeepTech and Venture Capital Funds
+- Startup Incorporation and Entity Design (India, Delaware, Singapore)
 
 ## Sectors Served
 
-Healthcare, MedTech, Material Science, Green Tech (CleanTech), Automobiles, Agritech, DeepTech, Software, Artificial Intelligence
+Healthcare, MedTech, Material Science, Green Tech (CleanTech), Automobiles, Agritech, DeepTech, Software, Artificial Intelligence, Defense & Aerospace.
 
 ## Notable Engagements
 
 - Advised Shark Tank India-featured startups that scaled to 100 Crore INR (approx. USD 12M) in revenue
-- Advised IIT Bombay and IIT Delhi spinout ventures
-- Provided IP counsel ahead of Series A closings and international funding rounds
-- Helped startups reduce legal costs by over 60% through integrated advisory
-- Delivered keynotes and workshops at IITs, CII, Intel, Boeing, and UC Berkeley Law
+- Advised IIT Bombay, SINE, and IIT Delhi spinout ventures
+- Provided IP counsel ahead of Series A closings and international venture rounds
+- Delivered keynotes and workshops at IITs, CII, Intel, Boeing, Google India, and UC Berkeley Law
+- Mentors startups globally through the Techstars network and incubation ecosystems
 
-## Contact
+## Contact & Physical Practice
 
 - Website: https://startupindia.law
 - Email: info@startupindia.law
@@ -49,7 +77,7 @@ Healthcare, MedTech, Material Science, Green Tech (CleanTech), Automobiles, Agri
 - WhatsApp: https://wa.me/917827963285
 - Address: 20th Floor, Galaxy Blue Sapphire Plaza, Greater Noida W Rd, Sector 4, Noida, Uttar Pradesh 201309, India
 
-## Key Pages
+## Canonical Web Resources
 
 - Homepage: https://startupindia.law/
 - About Counsel: https://startupindia.law/about.html
