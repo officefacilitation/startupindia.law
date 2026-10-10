@@ -41,9 +41,8 @@ The 4 recognized client ventures with public video materials will be positioned 
      - Active state: Clicking swaps the thumbnail for a responsive embedded YouTube player (`https://www.youtube.com/embed/<ID>?autoplay=1&rel=0`) without layout shift.
      - Nested click safety: Clicking video play does not trigger card navigation.
    - **Advisory Bridge & CTA to Contact Page**:
-     - Below the narrative/video, a chamber outcome note and button:
-     - Example: *"Connect with Chamber for Similar Advisory &rarr;"* directing to `/contact.html?inquiry=portfolio&client=liger-mobility`.
-     - For confidential cards: *"Inquire Confidentially &rarr;"* directing to `/contact.html?inquiry=portfolio`.
+     - Below the narrative/video, a clean, direct action link/button:
+     - *"Connect with Us &rarr;"* directing to `/contact.html?inquiry=portfolio`.
 
 2. **Lead Narrative Update**:
    - Update `work.html` lead text to clarify: Public showcase features client-permitted videos from high-profile launches; all other client engagements maintain strict statutory confidentiality.
