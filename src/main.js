@@ -1315,7 +1315,7 @@ function initInteractiveCursor() {
     ring.classList.remove('custom-cursor-hidden');
   });
 
-  const interactiveSelectors = 'a, button, input, select, textarea, [role="button"], [data-href], .llm-pill-btn, .testimonial-line-item, .moat-card, .case-card, .case-video-embed, .case-connect-btn, .case-know-more-link, .service-card-deep, .credential-badge-item, .session-flat-item, .btn-pill-primary, .btn-pill-secondary, .direct-channels-card, .inquiry-preset-btn, .bot-chip';
+  const interactiveSelectors = 'a, button, input, select, textarea, [role="button"], [data-href], .llm-pill-btn, .testimonial-line-item, .moat-card, .case-video-embed, .case-connect-btn, .case-know-more-link, .service-card-cta, .credential-badge-item, .session-flat-item, .btn-pill-primary, .btn-pill-secondary, .direct-channels-card, .inquiry-preset-btn, .bot-chip';
 
   document.addEventListener('mouseover', (e) => {
     const target = e.target.closest(interactiveSelectors);

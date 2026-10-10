@@ -4820,15 +4820,23 @@ body.mobile-drawer-open .legal-bot-container {
 
 /* Universal Card Hover System (Restrained, elegant border focus across all cards) */
 [data-href],
-.case-card,
 .moat-card,
-.service-card-deep,
 .update-session-card,
 .counsel-bio-card,
 .inquiry-banner-card,
 .industry-card-item {
   cursor: pointer;
   transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.case-card,
+.service-card-deep {
+  transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.case-card[data-href],
+.service-card-deep[data-href] {
+  cursor: pointer;
 }
 
 [data-href]:hover,
