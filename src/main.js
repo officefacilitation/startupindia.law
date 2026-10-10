@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLegalBot();
   initCalendlyModal();
   initClickableCards();
+  initCaseVideoEmbeds();
   initContactFormPrefill();
   initContactForm();
 
@@ -771,12 +772,14 @@ function initClickableCards() {
     }
 
     card.addEventListener('click', (e) => {
-      // Allow native clicks on explicit nested anchors or buttons
+      // Allow native clicks on explicit nested anchors, buttons, or video player embeds
       const targetAnchor = e.target.closest('a');
       const targetButton = e.target.closest('button');
+      const targetVideo = e.target.closest('.case-video-embed');
 
       if (targetAnchor && targetAnchor !== card) return;
       if (targetButton && targetButton !== card) return;
+      if (targetVideo) return;
 
       const href = card.getAttribute('data-href');
       if (href) {
@@ -788,14 +791,62 @@ function initClickableCards() {
       if (e.key === 'Enter' || e.key === ' ') {
         const targetAnchor = e.target.closest('a');
         const targetButton = e.target.closest('button');
+        const targetVideo = e.target.closest('.case-video-embed');
         if (targetAnchor && targetAnchor !== card) return;
         if (targetButton && targetButton !== card) return;
+        if (targetVideo) return;
 
         const href = card.getAttribute('data-href');
         if (href) {
           e.preventDefault();
           window.location.href = href;
         }
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   7b. CASE VIDEO EMBEDS CONTROLLER (Click-to-Play YouTube)
+   ========================================================================== */
+function initCaseVideoEmbeds() {
+  const videoContainers = document.querySelectorAll('.case-video-embed[data-youtube-id]');
+
+  videoContainers.forEach(container => {
+    container.setAttribute('role', 'button');
+    if (!container.hasAttribute('tabindex')) {
+      container.setAttribute('tabindex', '0');
+    }
+    container.setAttribute('aria-label', 'Play case video');
+
+    function playVideo(e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+
+      if (container.querySelector('iframe')) return;
+
+      const ytId = container.getAttribute('data-youtube-id');
+      if (!ytId) return;
+
+      const iframe = document.createElement('iframe');
+      iframe.className = 'case-video-iframe';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(ytId)}?autoplay=1&rel=0&modestbranding=1`;
+      iframe.title = container.getAttribute('data-video-title') || 'Client Case Study Video';
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', 'true');
+
+      // Swap out poster image & overlay smoothly
+      container.innerHTML = '';
+      container.appendChild(iframe);
+    }
+
+    container.addEventListener('click', playVideo);
+    container.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        playVideo(e);
       }
     });
   });
@@ -1264,7 +1315,7 @@ function initInteractiveCursor() {
     ring.classList.remove('custom-cursor-hidden');
   });
 
-  const interactiveSelectors = 'a, button, input, select, textarea, [role="button"], [data-href], .llm-pill-btn, .testimonial-line-item, .moat-card, .case-card, .service-card-deep, .credential-badge-item, .session-flat-item, .btn-pill-primary, .btn-pill-secondary, .direct-channels-card, .inquiry-preset-btn, .bot-chip';
+  const interactiveSelectors = 'a, button, input, select, textarea, [role="button"], [data-href], .llm-pill-btn, .testimonial-line-item, .moat-card, .case-card, .case-video-embed, .case-connect-btn, .case-know-more-link, .service-card-deep, .credential-badge-item, .session-flat-item, .btn-pill-primary, .btn-pill-secondary, .direct-channels-card, .inquiry-preset-btn, .bot-chip';
 
   document.addEventListener('mouseover', (e) => {
     const target = e.target.closest(interactiveSelectors);
