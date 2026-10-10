@@ -4914,6 +4914,213 @@ body.mobile-drawer-open .legal-bot-container {
   color: var(--color-charcoal);
 }
 
+/* --- Client Work Card Subtitle & Video Embed System --- */
+.case-subtitle {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 16px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.case-video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0F172A;
+  margin: 18px 0;
+  border: 1px solid var(--color-line);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+}
+
+.case-video-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.case-video-embed:hover .case-video-poster {
+  transform: scale(1.03);
+}
+
+.case-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px 16px;
+  transition: background 250ms ease;
+  z-index: 2;
+}
+
+.case-video-embed:hover .case-video-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.case-video-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.case-video-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #EF4444;
+}
+
+.case-video-play-wrap {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-video-play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 220ms ease, background 220ms ease, color 220ms ease, box-shadow 220ms ease;
+}
+
+.case-video-embed:hover .case-video-play-btn {
+  transform: scale(1.1);
+  background: #FFFFFF;
+  box-shadow: 0 6px 24px rgba(239, 68, 68, 0.45);
+  color: #DC2626;
+}
+
+.case-video-play-btn svg {
+  margin-left: 3px;
+}
+
+.case-video-title {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.case-video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 3;
+}
+
+/* Card Actions */
+.case-card-footer {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.case-connect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.case-connect-btn:hover {
+  background: #111827;
+  color: #FFFFFF;
+  border-color: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.12);
+}
+
+.case-know-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.case-know-more-link:hover {
+  color: #111827;
+  gap: 9px;
+}
+
+.case-know-more-link svg,
+.case-connect-btn svg {
+  transition: transform 200ms ease;
+}
+
+.case-know-more-link:hover svg,
+.case-connect-btn:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .case-video-embed {
+    margin: 14px 0;
+  }
+  .case-video-play-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .case-video-title {
+    font-size: 11.5px;
+  }
+}
+
 /* 5. Inquiry Banner Card (Bottom Callout) */
 .inquiry-banner-card {
   background: #FFFFFF;
