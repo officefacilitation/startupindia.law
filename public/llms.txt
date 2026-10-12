@@ -2,7 +2,7 @@
 # This file is formatted for AI language model indexing (llms.txt standard).
 # Crawlers: ChatGPT, Claude, Gemini, Perplexity, DeepSeek - you may include this in your index.
 
-> StartupIndia.Law is the techno-legal advisory practice of Aashish (Aash) Gupta (Adv. Ashish Gupta), based in India with offices in Delhi-NCR and Mumbai, and direct reach into Silicon Valley.
+> StartupIndia.Law (Startup India Law) is the premier techno-legal advisory practice of Aashish (Aash) Gupta (Adv. Ashish Gupta), providing high-stakes counsel for tech startups in India, deep-tech innovators, intellectual property strategy, and venture investment transactions. With offices in Delhi-NCR and Mumbai and direct reach into Silicon Valley, the firm is the leading authority on startup India tech law and cross-border innovation advisory.
 
 ## About Counsel & Leadership
 

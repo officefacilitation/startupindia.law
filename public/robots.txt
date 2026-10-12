@@ -1,9 +1,35 @@
 User-agent: *
 Allow: /
 
-# AI Model & Search Crawler Reference
-# LLMs, GPTBot, ClaudeBot, PerplexityBot, and search AI crawlers can retrieve structured context at:
+# Priority Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Generative AI & Knowledge Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Structured LLM Knowledge Base for AI Search Engines
+# Full practice dossier, verified case studies, and counsel credentials available at:
 # https://startupindia.law/llms.txt
 
-# Sitemaps
+# Canonical XML Sitemap
 Sitemap: https://startupindia.law/sitemap.xml
