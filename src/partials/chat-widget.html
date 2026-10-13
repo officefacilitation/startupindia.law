@@ -1,0 +1,97 @@
+<!-- INTERACTIVE DIRECT LEGAL DESK CHAT WIDGET -->
+<div class="legal-bot-container" id="legalBotWidget">
+  <button type="button" class="legal-bot-trigger" id="legalBotTrigger" aria-label="Chat with Aash"
+    aria-expanded="false">
+    <div class="bot-trigger-avatar-wrap">
+      <img src="/aash-avatar.png" alt="Aash" class="bot-trigger-avatar-img" width="32" height="32" />
+      <span class="bot-online-dot" aria-hidden="true"></span>
+    </div>
+    <span class="chat-trigger-label">Hey, it's Aash</span>
+  </button>
+
+  <div class="legal-bot-window" id="legalBotWindow" role="dialog" aria-modal="true" aria-labelledby="botTitle">
+    <div class="bot-header">
+      <div class="bot-header-left">
+        <div class="bot-avatar-badge">
+          <img src="/aash-avatar.png" alt="Aash" class="bot-avatar-img" width="38" height="38" />
+          <span class="bot-online-dot" aria-hidden="true"></span>
+        </div>
+        <div class="bot-header-text">
+          <h3 class="bot-header-title" id="botTitle">Aash</h3>
+        </div>
+      </div>
+      <button type="button" class="bot-close-btn" id="botCloseBtn" aria-label="Close Chat">&times;</button>
+    </div>
+
+    <div class="bot-messages-body" id="botMessagesBody">
+      <div class="bot-msg-wrapper bot-msg-wrapper-bot">
+        <img src="/aash-avatar.png" alt="Aash" class="bot-bubble-avatar" width="28" height="28" />
+        <div class="bot-msg bot-msg-bot">
+          <p>Hey, it's Aash. Type your question below or tap one to get started.</p>
+          <span class="bot-timestamp">Just now</span>
+        </div>
+      </div>
+
+      <div class="bot-quick-chips" id="botQuickChips">
+        <button type="button" class="bot-chip" data-query="Schedule 1:1 Advisory Consultation">
+          <span class="bot-chip-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </span>
+          <span>Schedule 1:1 Advisory Consultation</span>
+        </button>
+        <button type="button" class="bot-chip" data-query="Chat Directly on WhatsApp">
+          <span class="bot-chip-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </span>
+          <span>Chat Directly on WhatsApp</span>
+        </button>
+        <button type="button" class="bot-chip" data-query="Client Work &amp; Achievements">
+          <span class="bot-chip-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+            </svg>
+          </span>
+          <span>Client Work &amp; Achievements</span>
+        </button>
+        <button type="button" class="bot-chip" data-query="Specialties &amp; Practices">
+          <span class="bot-chip-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+          </span>
+          <span>Specialties &amp; Practices</span>
+        </button>
+        <button type="button" class="bot-chip" data-query="About Counsel &amp; Background">
+          <span class="bot-chip-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </span>
+          <span>About Counsel &amp; Background</span>
+        </button>
+      </div>
+    </div>
+
+    <form class="bot-footer-form" id="botForm">
+      <input type="text" class="bot-input-field" id="botInput" placeholder="Type your question..." autocomplete="off">
+      <button type="submit" class="bot-submit-btn" aria-label="Send message">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
