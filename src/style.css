@@ -2493,20 +2493,32 @@ textarea,
 }
 
 .site-header.header-scrolled .header-container {
-  background: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 14px 40px -6px rgba(17, 24, 39, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
-  border-color: rgba(17, 24, 39, 0.14) !important;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 40px -6px rgba(17, 24, 39, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  border-color: rgba(17, 24, 39, 0.14);
 }
 
 .header-container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 14px var(--container-pad);
+  pointer-events: auto;
+  width: 100%;
+  max-width: 1060px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 9999px;
+  padding: 8px 10px 8px 24px;
+  box-shadow: 0 10px 32px -4px rgba(17, 24, 39, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  pointer-events: auto;
+  transition: all 250ms ease;
+}
+
+.header-container:hover {
+  border-color: rgba(17, 24, 39, 0.16);
+  box-shadow: 0 14px 38px -4px rgba(17, 24, 39, 0.09);
 }
 
 .header-brand {
@@ -2556,7 +2568,13 @@ textarea,
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .header-nav {
+    display: none;
+  }
 }
 
 .nav-link {
@@ -5824,60 +5842,6 @@ body.mobile-drawer-open .legal-bot-container {
 /* ==========================================================================
    INTERACTIVE EXPERIENCE & LLM SEO V2 EXTENSIONS
    ========================================================================== */
-
-/* Floating Island Pill Navbar */
-.site-header {
-  position: fixed !important;
-  top: 16px !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 1000 !important;
-  background: transparent !important;
-  border: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  pointer-events: none !important;
-  display: flex !important;
-  justify-content: center !important;
-  padding: 0 16px !important;
-}
-
-.header-container {
-  pointer-events: auto !important;
-  width: 100% !important;
-  max-width: 1060px !important;
-  background: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border: 1px solid rgba(17, 24, 39, 0.08) !important;
-  border-radius: 9999px !important;
-  padding: 8px 10px 8px 24px !important;
-  box-shadow: 0 10px 32px -4px rgba(17, 24, 39, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6) inset !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  transition: all 250ms ease !important;
-}
-
-.header-container:hover {
-  border-color: rgba(17, 24, 39, 0.16) !important;
-  box-shadow: 0 14px 38px -4px rgba(17, 24, 39, 0.09) !important;
-}
-
-.header-nav {
-  display: flex !important;
-  align-items: center !important;
-  gap: 20px !important;
-}
-
-@media (max-width: 960px) {
-  .header-nav {
-    display: none !important;
-  }
-}
 
 /* Luminous Glow CTAs */
 .btn-pill-glow {
