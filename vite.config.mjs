@@ -81,8 +81,28 @@ function localApiPlugin() {
   };
 }
 
+function htmlPartialsPlugin() {
+  return {
+    name: 'html-partials-pre-render',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        const partialsDir = resolve('src/partials');
+        return html.replace(/<!--\s*@include\s+partials\/([\w.-]+)\s*-->/g, (match, filename) => {
+          const filePath = resolve(partialsDir, filename);
+          if (fs.existsSync(filePath)) {
+            return fs.readFileSync(filePath, 'utf-8');
+          }
+          console.warn(`[html-partials] Warning: Partial not found: ${filePath}`);
+          return match;
+        });
+      },
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [localApiPlugin()],
+  plugins: [localApiPlugin(), htmlPartialsPlugin()],
   build: {
     rollupOptions: {
       input: {
